@@ -18,7 +18,7 @@ const Row = ({ title, fetchUrl, isLargeImage }) => {
         fetchData();
     }, [fetchUrl]);
 
-    console.table(movies)
+    // console.log(movies)
 
     return (
         <div className='row'>
@@ -42,7 +42,10 @@ const Row = ({ title, fetchUrl, isLargeImage }) => {
                                 <FaThumbsDown />
                             </div>
                             <h2>{movie.title || movie.name}</h2>
-                            <p>{movie.overview}</p>
+                            <div className="vote-year">
+                                <p>{movie?.vote_average}</p>
+                                <p>{movie?.release_date}</p>
+                            </div>
 
                         </div>
                     </div>
